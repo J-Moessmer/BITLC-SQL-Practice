@@ -1,3 +1,25 @@
+USE master;
+GO
+
+-- 0. Drop and recreate database for clean testing
+IF DB_ID('TarifDB') IS NOT NULL
+BEGIN
+    ALTER DATABASE TarifDB SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+    DROP DATABASE TarifDB;
+END;
+GO
+CREATE DATABASE TarifDB;
+GO
+USE TarifDB;
+GO
+
+-- 1. Switch context to your dedicated database
+IF DB_ID('TarifDB') IS NULL
+BEGIN
+    CREATE DATABASE TarifDB;
+END;
+GO
+
 -- 1. Switch context to your dedicated database
 USE TarifDB;
 GO

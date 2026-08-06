@@ -1,3 +1,18 @@
+USE master;
+GO
+
+-- 0. Drop and recreate database for clean testing
+IF DB_ID('MyFirstSqlDb') IS NOT NULL
+BEGIN
+    ALTER DATABASE MyFirstSqlDb SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+    DROP DATABASE MyFirstSqlDb;
+END;
+GO
+CREATE DATABASE MyFirstSqlDb;
+GO
+USE MyFirstSqlDb;
+GO
+
 -- 1. Switch context to your dedicated database
 USE MyFirstSqlDb;
 GO
