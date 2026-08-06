@@ -1,6 +1,6 @@
 # BITLC-SQL-Practice
 
-Ein einfaches SQL-Startprojekt fuer Microsoft SQL Server (T-SQL).
+A simple SQL starter project for Microsoft SQL Server (T-SQL).
 
-## Datei
-- [start.sql](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/start.sql): Enthalt die grundlegenden Befehle zum Erstellen der Datenbank, Tabelle, Testdaten und Abfrage.
+## File
+- [My-first-sql-db.sql](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/My-first-sql-db.sql): Contains basic commands for creating the table, test data, and query.

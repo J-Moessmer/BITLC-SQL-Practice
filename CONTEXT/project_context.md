@@ -1,15 +1,15 @@
-# Projekt-Kontext: BITLC-SQL-Practice
+# Project Context: BITLC-SQL-Practice
 
-## Zielsetzung
-Ein einfaches SQL-Startprojekt fuer Microsoft SQL Server (T-SQL).
+## Objective
+A simple SQL starter project for Microsoft SQL Server (T-SQL).
 
-## Dateien
-- `start.sql`: Dynamisches T-SQL Skript. Erstellt `MeinShopDB` nur falls nicht vorhanden (vermeidet `model`-Datenbank Sperrkonflikte), erstellt/ersetzt die Tabelle `Kunden`, fuegt Testdaten ein und fragt sie ab.
-- `README.md`: Minimalistische Dokumentation.
+## Files
+- `My-first-sql-db.sql`: Directly executable T-SQL script. Drops any existing Foreign Keys referencing `Customers`, recreates the `Customers` table, inserts test data, and queries it.
+- `README.md`: Minimal documentation.
 
-## Schema: Kunden
-- `KundenID`: INT IDENTITY(1,1) PRIMARY KEY
-- `Vorname`: NVARCHAR(50) NOT NULL
-- `Nachname`: NVARCHAR(50) NOT NULL
+## Schema: Customers
+- `CustomerID`: INT IDENTITY(1,1) PRIMARY KEY
+- `FirstName`: NVARCHAR(50) NOT NULL
+- `LastName`: NVARCHAR(50) NOT NULL
 - `Email`: NVARCHAR(100) UNIQUE
-- `ErstelltAm`: DATETIME DEFAULT GETDATE()
+- `CreatedAt`: DATETIME DEFAULT GETDATE()
