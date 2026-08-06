@@ -1,15 +1,13 @@
 -- ============================================================
--- SQL ÜBUNGSDATEI - practice.db
+-- SQL ÜBUNGSDATEI - Microsoft SQL Server (T-SQL)
 -- ============================================================
 -- Tipps:
--- 1. Führe dieses Skript aus oder nutze eine VS Code Extension 
---    (z. B. "SQLite Viewer" oder "SQLite"), um Abfragen zu testen.
--- 2. Wenn du die Datenbank zurücksetzen möchtest, führe einfach 
---    `python setup_db.py` im Terminal aus.
+-- Führe diese Abfragen in deiner Microsoft SQL Server Umgebung 
+-- (z. B. SSMS, Azure Data Studio oder der SQL Server Extension in VS Code) aus.
 -- ============================================================
 
 -- ------------------------------------------------------------
--- LEVEL 1: Grundlagen (SELECT, WHERE, ORDER BY, LIMIT)
+-- LEVEL 1: Grundlagen (SELECT, WHERE, ORDER BY, TOP)
 -- ------------------------------------------------------------
 
 -- Aufgabe 1.1: Zeige alle Kunden aus Deutschland an.
@@ -40,7 +38,7 @@ WHERE category_id = 1;
 
 
 -- ------------------------------------------------------------
--- LEVEL 3: Verknüpfungen (JOINs)
+-- LEVEL 3: Verknüpfungen (JOINs) & T-SQL String Verknüpfung
 -- ------------------------------------------------------------
 
 -- Aufgabe 3.1: Liste alle Produkte zusammen mit ihrem Kategorienamen auf.
@@ -49,7 +47,11 @@ FROM products p
 JOIN categories c ON p.category_id = c.category_id;
 
 -- Aufgabe 3.2: Zeige alle Bestellungen mit Kundennamen, Bestelldatum und Status an.
-SELECT o.order_id, c.first_name || ' ' || c.last_name AS customer_name, o.order_date, o.status, o.total_amount
+SELECT o.order_id, 
+       CONCAT(c.first_name, ' ', c.last_name) AS customer_name, 
+       o.order_date, 
+       o.status, 
+       o.total_amount
 FROM orders o
 JOIN customers c ON o.customer_id = c.customer_id;
 
@@ -70,7 +72,7 @@ WITH CustomerSales AS (
     WHERE o.status = 'Completed'
     GROUP BY o.customer_id
 )
-SELECT c.first_name, c.last_name, COALESCE(cs.total_spent, 0) AS total_spent
+SELECT c.first_name, c.last_name, ISNULL(cs.total_spent, 0) AS total_spent
 FROM customers c
 LEFT JOIN CustomerSales cs ON c.customer_id = cs.customer_id
 ORDER BY total_spent DESC;

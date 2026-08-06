@@ -1,22 +1,19 @@
 # BITLC-SQL-Practice 🗄️
 
-Ein lokales Repository zum Üben und Erlernen von SQL-Abfragen mit **SQLite**.
+Ein lokales Repository zum Üben und Erlernen von SQL-Abfragen mit **Microsoft SQL Server (T-SQL)**.
 
 ---
 
 ## 📁 Repository-Struktur
 
-- **[practice.db](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/practice.db)**: Die einsatzbereite SQLite-Datenbank.
-- **[schema.sql](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/schema.sql)**: Enthält alle `CREATE TABLE`-Befehle für das Datenbankschema.
-- **[sample_data.sql](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/sample_data.sql)**: Enthält Testdaten (Kunden, Produkte, Kategorien, Bestellungen).
-- **[setup_db.py](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/setup_db.py)**: Python-Skript zum Erstellen oder Zurücksetzen der Datenbank.
-- **[queries.sql](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/queries.sql)**: Beispielabfragen und Übungsaufgaben (Grundlagen bis fortgeschritten).
+- **[init_db_mssql.sql](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/init_db_mssql.sql)**: Komplettes Skript zum Erstellen der Tabellen und Einfügen aller Beispieldaten in SQL Server.
+- **[schema.sql](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/schema.sql)**: T-SQL Tabellendefinitionen.
+- **[sample_data.sql](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/sample_data.sql)**: T-SQL Testdaten (Kunden, Produkte, Kategorien, Bestellungen).
+- **[queries.sql](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/queries.sql)**: Beispielabfragen und Übungsaufgaben für T-SQL.
 
 ---
 
 ## 📊 Datenbankschema (E-Commerce)
-
-Die Datenbank simuliert einen einfachen Online-Shop mit folgenden Tabellen:
 
 1. **`categories`**: Produktkategorien (`category_id`, `name`, `description`)
 2. **`customers`**: Kundenstamm (`customer_id`, `first_name`, `last_name`, `email`, `city`, `country`, `created_at`)
@@ -26,20 +23,13 @@ Die Datenbank simuliert einen einfachen Online-Shop mit folgenden Tabellen:
 
 ---
 
-## 🚀 Erste Schritte
+## 🚀 Einrichtung in SQL Server
 
-### 1. Datenbank zurücksetzen / neu erstellen
-Falls du Testdaten veränderst oder neu anfangen möchtest:
-```bash
-python setup_db.py
-```
+Führe in deiner SQL Server Umgebung (z. B. SSMS, Azure Data Studio oder VS Code MSSQL Extension) das Skript **[init_db_mssql.sql](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/init_db_mssql.sql)** aus.
 
-### 2. SQL in VS Code ausführen & anzeigen
-Empfohlene VS Code Extensions:
-- **SQLite Viewer** (Florian Klampfer): Tabellen direkt in VS Code visuell betrachten.
-- **SQLite** (alexcvzz): SQL-Queries aus `.sql`-Dateien direkt gegen die `practice.db` ausführen.
+Dabei werden bestehende Tabellen automatisch gelöscht, neu angelegt und mit Testdaten befüllt.
 
 ---
 
 ## 📝 Übungen ausprobieren
-Öffne die Datei **[queries.sql](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/queries.sql)** für praxisnahe Übungsaufgaben von `SELECT` und `JOIN` bis hin zu Aggregate-Funktionen und CTEs.
+Öffne die Datei **[queries.sql](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/queries.sql)** für praxisnahe Übungsaufgaben von `SELECT` über `JOIN` bis hin zu Aggregate-Funktionen, `CONCAT`, `ISNULL` und CTEs.
