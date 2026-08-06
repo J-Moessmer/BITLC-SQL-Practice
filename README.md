@@ -1,35 +1,35 @@
-# BITLC-SQL-Practice 🗄️
+# BITLC-SQL-Practice
 
-Ein lokales Repository zum Üben und Erlernen von SQL-Abfragen mit **Microsoft SQL Server (T-SQL)**.
-
----
-
-## 📁 Repository-Struktur
-
-- **[init_db_mssql.sql](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/init_db_mssql.sql)**: Komplettes Skript zum Erstellen der Tabellen und Einfügen aller Beispieldaten in SQL Server.
-- **[schema.sql](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/schema.sql)**: T-SQL Tabellendefinitionen.
-- **[sample_data.sql](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/sample_data.sql)**: T-SQL Testdaten (Kunden, Produkte, Kategorien, Bestellungen).
-- **[queries.sql](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/queries.sql)**: Beispielabfragen und Übungsaufgaben für T-SQL.
+Ein Repository zum Ueben von SQL mit Unterstuetzung fuer SQLite (lokale .db-Datei) und Microsoft SQL Server (T-SQL).
 
 ---
 
-## 📊 Datenbankschema (E-Commerce)
+## Repository-Struktur
 
-1. **`categories`**: Produktkategorien (`category_id`, `name`, `description`)
-2. **`customers`**: Kundenstamm (`customer_id`, `first_name`, `last_name`, `email`, `city`, `country`, `created_at`)
-3. **`products`**: Artikelkatalog (`product_id`, `name`, `category_id`, `price`, `stock_quantity`)
-4. **`orders`**: Bestellungen (`order_id`, `customer_id`, `order_date`, `status`, `total_amount`)
-5. **`order_items`**: Bestellpositionen (`order_item_id`, `order_id`, `product_id`, `quantity`, `unit_price`)
+### SQLite (Lokale Datenbank ohne Server)
+- [practice.db](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/practice.db): Die einsatzbereite SQLite-Datenbank.
+- [setup_db.py](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/setup_db.py): Python-Skript zum automatischen Erstellen und Zuruecksetzen der SQLite-Datenbank.
+- [schema_sqlite.sql](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/schema_sqlite.sql): SQLite Tabellenschema.
+- [sample_data_sqlite.sql](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/sample_data_sqlite.sql): SQLite Testdaten.
+
+### Microsoft SQL Server (T-SQL)
+- [init_db_mssql.sql](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/init_db_mssql.sql): Komplettes Skript fuer MS SQL Server / SSMS / Azure Data Studio.
+- [schema.sql](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/schema.sql): T-SQL Tabellenschema.
+- [sample_data.sql](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/sample_data.sql): T-SQL Testdaten.
+
+### Abfragen und Uebungen
+- [queries.sql](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/queries.sql): Uebungsaufgaben (Level 1 bis Level 4).
 
 ---
 
-## 🚀 Einrichtung in SQL Server
+## Erste Schritte
 
-Führe in deiner SQL Server Umgebung (z. B. SSMS, Azure Data Studio oder VS Code MSSQL Extension) das Skript **[init_db_mssql.sql](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/init_db_mssql.sql)** aus.
+### Option A: SQLite (per Python)
+Fuehre im Terminal aus:
+```bash
+python setup_db.py
+```
+Damit wird practice.db mit allen Tabellen und Daten neu erstellt.
 
-Dabei werden bestehende Tabellen automatisch gelöscht, neu angelegt und mit Testdaten befüllt.
-
----
-
-## 📝 Übungen ausprobieren
-Öffne die Datei **[queries.sql](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/queries.sql)** für praxisnahe Übungsaufgaben von `SELECT` über `JOIN` bis hin zu Aggregate-Funktionen, `CONCAT`, `ISNULL` und CTEs.
+### Option B: Microsoft SQL Server (T-SQL)
+Fuehre in deiner SQL Server Umgebung (SSMS, Azure Data Studio oder VS Code MSSQL Extension) das Skript [init_db_mssql.sql](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/init_db_mssql.sql) aus.

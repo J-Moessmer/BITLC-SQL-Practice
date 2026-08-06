@@ -2,8 +2,8 @@ import sqlite3
 import os
 
 DB_FILE = "practice.db"
-SCHEMA_FILE = "schema.sql"
-DATA_FILE = "sample_data.sql"
+SCHEMA_FILE = "schema_sqlite.sql"
+DATA_FILE = "sample_data_sqlite.sql"
 
 def build_database():
     if os.path.exists(DB_FILE):
