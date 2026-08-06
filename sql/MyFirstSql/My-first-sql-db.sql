@@ -2,7 +2,6 @@
 USE MyFirstSqlDb;
 GO
 
-
 -- 3. create Authors table
 CREATE TABLE Authors (
     ID INT IDENTITY(1,1) NOT NULL,

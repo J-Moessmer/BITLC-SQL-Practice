@@ -1,6 +1,10 @@
-# BITLC-SQL-Practice
+# BITLC SQL Practice
 
-A simple SQL starter project for Microsoft SQL Server (T-SQL).
+## Table of Contents
 
-## File
-- [My-first-sql-db.sql](file:///c:/Users/Jmoessmer/Documents/_GITHUB_Repos/BITLC-SQL-Practice/My-first-sql-db.sql): Clean script that sets up the `MyFirstSqlDb` database, cleans up master, creates the `Customers` table, inserts test data, and queries it.
+- [My First SQL DB](sql/MyFirstSql/README.md)
+- [Tarif DB](sql/TarifDB/README.md)
+
+## Project Overview
+
+A collection of simple SQL Server practice scripts. The repository now organizes each script into its own folder with a dedicated README.
