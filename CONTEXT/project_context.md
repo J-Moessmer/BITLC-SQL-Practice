@@ -3,8 +3,11 @@
 ## Objective
 A simple SQL starter project for Microsoft SQL Server (T-SQL).
 
+## Database
+- `MyFirstSqlDb`: Dedicated user database created by the script.
+
 ## Files
-- `My-first-sql-db.sql`: Directly executable T-SQL script. Drops any existing Foreign Keys referencing `Customers`, recreates the `Customers` table, inserts test data, and queries it.
+- `My-first-sql-db.sql`: Complete T-SQL setup script. Automatically clears background locks on `model`, creates `MyFirstSqlDb`, cleans master, creates `Customers` table, inserts test data, and runs `SELECT`.
 - `README.md`: Minimal documentation.
 
 ## Schema: Customers
