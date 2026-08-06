@@ -103,6 +103,43 @@ Add your own INSERT statements to populate the tables and explore the relationsh
 ---
 Feel free to extend the schema, add seed data, or modify constraints to suit your learning goals.
 
+---
+## ER Diagram
+```mermaid
+erDiagram
+    Ansprechpartner ||--o{ Kunde : "has"
+    Kunde ||--o{ Kunde_Tarif : "has"
+    Tarif ||--o{ Kunde_Tarif : "has"
+    Ansprechpartner {
+        int AnsprechpartnerNr PK
+        string Name
+        string Vorname
+        string Telefon
+        string Mail
+    }
+    Tarif {
+        int TarifNr PK
+        string Bezeichnung
+    }
+    Kunde {
+        int KundenNr PK
+        string Name
+        string Vorname
+        string Strasse
+        string PLZ
+        string Ort
+        int AnsprechpartnerNr FK
+    }
+    Kunde_Tarif {
+        int KTNr PK
+        int KundenNr FK
+        int TarifNr FK
+        date Beginn
+        date Ende
+    }
+```
+
+
 This script creates a sample tariff‑and‑customer database (`TarifDB`). It defines:
 
 - **Ansprechpartner** – contact person details
