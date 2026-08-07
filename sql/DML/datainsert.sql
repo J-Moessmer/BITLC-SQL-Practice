@@ -1,4 +1,5 @@
 USE DMLbeispiel
+GO
 
 --neue datensätze anlegen
 
@@ -15,3 +16,6 @@ VALUES (2, N'Mia' , N'Musterfrau')
 SELECT *
 FROM kunde;
 
+--neue datensätze
+INSERT INTO bestellung
+VALUES ('20260807', 123.45, 1);
